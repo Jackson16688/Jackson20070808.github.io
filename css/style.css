@@ -1,0 +1,784 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --light-gray: #f5f5f5;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 页眉样式 */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* 导航栏样式 */
+nav {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    border-bottom: 3px solid transparent;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+/* 主要内容区 */
+main {
+    padding: 2rem 0;
+    min-height: calc(100vh - 400px);
+}
+
+/* 页脚样式 */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+/* 首页特定样式 */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 5px solid var(--light-color);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.profile-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.profile-info p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.link-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.link-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.link-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* 关于我页面 */
+.about-section {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-text h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.info-box {
+    background: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+}
+
+.info-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-box h3 i {
+    color: var(--secondary-color);
+}
+
+.info-box ul {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.info-box ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.info-box ul li i {
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    color: var(--secondary-color);
+}
+
+.interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.interest-tag {
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+/* 兴趣爱好页面 */
+.hobbies-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.hobby-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.hobby-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hobby-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+}
+
+.hobby-image img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.hobby-image img:hover {
+    transform: scale(1.05);
+}
+
+.hobby-content {
+    padding: 1.5rem;
+}
+
+.hobby-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hobby-content h2 i {
+    color: var(--secondary-color);
+}
+
+/* 学习经历页面 */
+.experience-section h2 {
+    color: var(--primary-color);
+    margin: 2rem 0 1.5rem;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.experience-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.experience-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.experience-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.date {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.experience-content {
+    padding: 1.5rem;
+}
+
+.experience-image {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.experience-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.experience-image img:hover {
+    transform: scale(1.02);
+}
+
+.experience-details p {
+    margin-bottom: 1rem;
+}
+
+.experience-details ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.experience-details ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* 技能展示页面 */
+.skills-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.skill-category {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.skill-category h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-category h2 i {
+    color: var(--secondary-color);
+}
+
+.skill-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill {
+    margin-bottom: 1.5rem;
+}
+
+.skill h3 {
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+    font-size: 1.1rem;
+}
+
+.skill-level {
+    height: 10px;
+    background: #eee;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.skill-level-bar {
+    height: 100%;
+    background: var(--secondary-color);
+    border-radius: 5px;
+    transition: width 1s ease-in-out;
+}
+
+.tools-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--light-gray);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    min-width: 100px;
+    transition: var(--transition);
+}
+
+.tool:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tool i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.learning-goals {
+    list-style: none;
+    padding-left: 0;
+}
+
+.learning-goals li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.learning-goals li:before {
+    content: '→';
+    color: var(--secondary-color);
+}
+
+/* 成就活动页面 */
+.achievements-section,
+.activities-section,
+.awards-section {
+    margin-bottom: 3rem;
+}
+
+.achievement-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.achievement-icon {
+    background: var(--light-gray);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.achievement-icon i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.achievement-content {
+    flex: 1;
+}
+
+.achievement-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.achievement-details {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.achievement-image {
+    max-width: 200px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.achievement-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-container {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 1rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.activity-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.activity-image {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.activity-image-container {
+    flex: 1 1 50%;
+    min-width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.activity-image img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.activity-image img:hover {
+    transform: scale(1.05);
+}
+
+.activity-content {
+    padding: 1.5rem;
+}
+
+.activity-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.awards-list {
+    list-style: none;
+    padding: 0;
+}
+
+.awards-list li {
+    background: white;
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.awards-list li:before {
+    content: '🏆';
+    font-size: 1.2rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .quick-links {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .hobbies-section {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    .hobby-image {
+        height: 180px;
+    }
+    
+    .achievement-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .achievement-image {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-wrap: wrap;
+    }
+    
+    nav ul li {
+        flex: 1 0 50%;
+        text-align: center;
+    }
+    
+    .hero {
+        padding: 1.5rem;
+    }
+    
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .experience-card {
+        margin-bottom: 2rem;
+    }
+    
+    .experience-image {
+        flex-direction: column;
+    }
+    
+    .experience-image img {
+        width: 100%;
+    }
+    
+    .activity-image img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .activity-image-container {
+        flex: 1 1 100%;
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .profile-info h2 {
+        font-size: 1.5rem;
+    }
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .quick-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .hobbies-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .hobby-image {
+        height: 160px;
+    }
+    
+    .achievement-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .achievement-details {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .achievement-image {
+        margin: 0 auto;
+    }
+}
